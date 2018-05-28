@@ -24,6 +24,10 @@
  * 	position:是文件读取的起始位置
  * 	bytesRead：读取的字节数
  * 	buffer:缓冲区的对象（读取到的内容）
+ *
+ * 打开文件 fs.open(path,flags, [mode], [callback(err,fd)]) 
+ * 关闭文件 fs.close(fd, [callback(err)]) fs.closeSync(fd) 
+ * 读取文件（文件描述符）
  */
 const fs = require("fs");
 fs.readFile("./test.txt", "utf-8", (err,data) => {
