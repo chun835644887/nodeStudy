@@ -1,0 +1,5 @@
+extends layout
+block content
+	- list = ["Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis"]
+	each item in list
+		li(id=item) #{item}

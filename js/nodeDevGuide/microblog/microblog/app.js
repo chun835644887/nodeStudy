@@ -23,6 +23,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users/:username', usersRouter);
 app.use('/hello', helloRouter);
+app.get('/list', function(req, res) {
+ 	res.render('list', {
+ 		title: 'List',
+ 		items: [1991, 'byvoid', 'express', 'Node.js']
+ 	});
+}); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
