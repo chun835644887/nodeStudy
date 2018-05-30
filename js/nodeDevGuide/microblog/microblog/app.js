@@ -28,6 +28,20 @@ app.get('/list', function(req, res) {
  		title: 'List',
  		items: [1991, 'byvoid', 'express', 'Node.js']
  	});
+});
+app.get('/jade-demo', function(req, res) {
+ 	res.render('jade-demo', {
+ 		title: 'jade-demo',
+ 		friends : 10,
+ 		list : ["javascript", "node", "html", "css", "java"],
+ 		colors : ["green", "red", "yellow", "azure", "rebeccapurple"],
+ 		conditions : {
+ 			isExist : true,
+ 			isBlack : false,
+ 			isGreen : true,
+ 			isYellow : false
+ 		}
+ 	});
 }); 
 
 // catch 404 and forward to error handler

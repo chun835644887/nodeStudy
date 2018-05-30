@@ -1,0 +1,31 @@
+extends layout
+block content
+	case friends
+		when 0
+			p no friend
+		when 1 
+			p you have a friend
+		default
+			p you have #{friends} friends
+	ul
+		each item,index in list
+			li(data-index=index) #{item}
+	ul
+		- for(var i = 0; i < list.length; i ++)
+			li(data-index='for-'+i) #{list[i]}
+	div
+		- for(var i = 0; i < list.length; i ++)
+			h3(style={color:colors[i]}) #{list[i]}
+	if conditions.isExist
+		h2(style:{color:'red'}) element is exist
+		p this is some content
+	if conditions.isBlack
+		div(style={height:'50px','background-color':'black'})
+	else if conditions.isGreen
+		div(style={height:'50px','background-color':'green'})
+	else if conditions.isYellow
+		div(style={height:'50px','background-color':'yellow'})
+	else 
+		div(style={height:'50px','background-color':'rebeccapurple'})
+	unless conditions.isBlack
+		div(style="height:50px;background-color:yellow")
