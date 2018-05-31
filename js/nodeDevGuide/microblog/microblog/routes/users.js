@@ -7,4 +7,7 @@ router.get('/', function(req, res, next) {
   	res.send('respond with a resource' );
 });
 
-module.exports = router;
+module.exports = function(req, res, next) {
+	console.log(`${JSON.stringify(req.params)}`);
+  	res.send('respond with a resource' );
+};

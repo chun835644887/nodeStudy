@@ -8,6 +8,12 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var helloRouter = require('./routes/hello');
 
+var blogUserRouter = require("./routes/user")
+var blogPostRouter = require("./routes/post");
+var blogRegRouter = require("./routes/reg");
+var blogLoginRouter = require("./routes/login");
+var blogLogoutRouter = require("./routes/logout");
+
 var app = express();
 
 // view engine setup
@@ -43,6 +49,15 @@ app.get('/jade-demo', function(req, res) {
  		}
  	});
 }); 
+
+/**
+ * microblog content
+ */
+app.get("/user/:id",blogUserRouter);
+app.get("/post", blogPostRouter);
+app.post("/reg", blogRegRouter);
+app.post("/login", blogLoginRouter);
+app.post("/logout", blogLogoutRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
