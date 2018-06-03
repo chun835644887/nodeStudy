@@ -13,6 +13,7 @@ var blogPostRouter = require("./routes/post");
 var blogRegRouter = require("./routes/reg");
 var blogLoginRouter = require("./routes/login");
 var blogLogoutRouter = require("./routes/logout");
+var blogMainRouter = require("./routes/main");
 
 var app = express();
 
@@ -53,11 +54,18 @@ app.get('/jade-demo', function(req, res) {
 /**
  * microblog content
  */
+app.all("*",function(req,res,next){
+	var fs =require("fs");
+	console.log(req.params);
+	next();
+});
+
 app.get("/user/:id",blogUserRouter);
 app.get("/post", blogPostRouter);
 app.post("/reg", blogRegRouter);
 app.post("/login", blogLoginRouter);
 app.post("/logout", blogLogoutRouter);
+app.get("/main",blogMainRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
