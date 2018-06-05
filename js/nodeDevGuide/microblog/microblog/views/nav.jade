@@ -4,10 +4,8 @@ div(role='navigation')#microblog-nav.navbar.navbar-default
 			a(href='#').navbar-brand microblog
 		div
 			ul.nav.navbar-nav
-				li.active
-					a(href='#') 首页
-				li
-					a(href='#') 登陆
-				li
-					a(href='#') 注册
+				- for(var i = 0; i < tabs.length; i ++)
+					- var active = tabs[i]==activeTab
+					li(class=active?'active':'')
+						a(href='#') #{tabs[i]}
 			

@@ -10,10 +10,12 @@ var helloRouter = require('./routes/hello');
 
 var blogUserRouter = require("./routes/user")
 var blogPostRouter = require("./routes/post");
-var blogRegRouter = require("./routes/reg");
+var blogRegPageRouter = require("./routes/reg-page");
 var blogLoginRouter = require("./routes/login");
 var blogLogoutRouter = require("./routes/logout");
 var blogMainRouter = require("./routes/main");
+
+var blogRegRouter = require("./routes/reg");
 
 var app = express();
 
@@ -56,16 +58,16 @@ app.get('/jade-demo', function(req, res) {
  */
 app.all("*",function(req,res,next){
 	var fs =require("fs");
-	console.log(req.params);
 	next();
 });
 
 app.get("/user/:id",blogUserRouter);
 app.get("/post", blogPostRouter);
-app.post("/reg", blogRegRouter);
+app.get("/reg-page", blogRegPageRouter);
 app.post("/login", blogLoginRouter);
 app.post("/logout", blogLogoutRouter);
 app.get("/main",blogMainRouter);
+app.post("/reg",blogRegRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
