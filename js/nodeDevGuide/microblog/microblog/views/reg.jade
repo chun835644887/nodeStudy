@@ -8,13 +8,21 @@ block content
 				div.col-sm-10
 					input(type="text",placeholder="请输入用户名")#username.form-control
 			div.form-group
+				label(for="sex").col-sm-2.control-label 性别：
+				div.col-sm-10
+					input(type="text",placeholder="性别")#sex.form-control
+			div.form-group
+				label(for="idCard").col-sm-2.control-label 身份证
+				div.col-sm-10
+					input(type="text",placeholder="身份证")#idCard.form-control
+			div.form-group
 				label(for="passworld1").col-sm-2.control-label 密码：
 				div.col-sm-10
-					input(type="text",placeholder="请输入密码")#passworld1.form-control
+					input(type="password",placeholder="请输入密码")#passworld1.form-control
 			div.form-group
 				label(for="passworld2").col-sm-2.control-label 验证密码：
 				div.col-sm-10
-					input(type="text",placeholder="请输入密码")#passworld2.form-control
+					input(type="password",placeholder="请输入密码")#passworld2.form-control
 			div.form-group
 				div.col-sm-offset-2.col-sm-10
 					button#reg-submit.btn.btn-primary 注册
