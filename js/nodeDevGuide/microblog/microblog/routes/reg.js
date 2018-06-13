@@ -9,7 +9,6 @@ module.exports = function(req, res, next){
 		&& body.passworld1 == body.passworld2 
 		&& body.sex
 		&& body.idCard){
-		console.log(body.username);
 		query.query("select * from user where username='" + body.username + "'",function(err, results, fields){
 			if(err){
 				return err;

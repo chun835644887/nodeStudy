@@ -2,7 +2,7 @@ extends layout
 block content
 	include ./nav.jade
 	div.reg-container
-		form(role="form").form-horizontal
+		div
 			div.form-group
 				label(for="username").col-sm-2.control-label 用户名：
 				div.col-sm-10
@@ -13,5 +13,6 @@ block content
 					input(type="text",placeholder="请输入密码")#passworld.form-control
 			div.form-group
 				div.col-sm-offset-2.col-sm-10
-					button(type="submit").btn.btn-primary 登陆
+					button(type="submit")#login-submit.btn.btn-primary 登陆
+	script(src='./javascripts/login-submit.js')
 	

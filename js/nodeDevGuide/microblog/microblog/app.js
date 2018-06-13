@@ -11,11 +11,12 @@ var helloRouter = require('./routes/hello');
 var blogUserRouter = require("./routes/user")
 var blogPostRouter = require("./routes/post");
 var blogRegPageRouter = require("./routes/reg-page");
-var blogLoginRouter = require("./routes/login");
+var blogLoginPageRouter = require("./routes/login-page");
 var blogLogoutRouter = require("./routes/logout");
 var blogMainRouter = require("./routes/main");
 
 var blogRegRouter = require("./routes/reg");
+var blogLoginRouter = require("./routes/login");
 
 var app = express();
 
@@ -64,10 +65,12 @@ app.all("*",function(req,res,next){
 app.get("/user/:id",blogUserRouter);
 app.get("/post", blogPostRouter);
 app.get("/reg-page", blogRegPageRouter);
-app.post("/login", blogLoginRouter);
-app.post("/logout", blogLogoutRouter);
+app.get("/login-page", blogLoginPageRouter);
+app.get("/logout-page", blogLogoutRouter);
 app.get("/main",blogMainRouter);
+
 app.post("/reg",blogRegRouter);
+app.post("/login",blogLoginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
